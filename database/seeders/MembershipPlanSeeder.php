@@ -11,8 +11,8 @@ class MembershipPlanSeeder extends Seeder
     public function run(): void
     {
         // Bersihkan data lama
-        MembershipBenefit::truncate();
-        MembershipPlan::truncate();
+        MembershipBenefit::query()->delete();
+        MembershipPlan::query()->delete();
 
         // Monthly
         $monthly = MembershipPlan::create([
